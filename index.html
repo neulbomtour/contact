@@ -279,26 +279,22 @@
             <div class="meta">
               <p class="name">WeChat</p>
               <p class="sub" data-i18n="wechatsub">QR로 친구추가</p>
-              <p class="sub" style="margin-top:6px; opacity:.9;">
-  WeChat ID: <strong>jue3445</strong><br/>
-  微信号：<strong>jue3445</strong>（可直接搜索添加）
-</p>
+              
 
             </div>
           </div>
- <div class="right">
-   <button class="pill"
-     data-qr="wechat.jpg"
-     data-title="WeChat QR"
-     data-link=""
-     data-i18n="showqr">QR 보기</button>
+<div class="right">
+  <button class="pill"
+    data-qr="wechat.jpg"
+    data-title="WeChat QR"
+    data-link=""
+    data-i18n="showqr">QR 보기</button>
 
-   <button class="pill" type="button"
-     onclick="navigator.clipboard.writeText('jue3445')
-       .then(()=>{this.innerText='Copied!'; setTimeout(()=>this.innerText='ID 복사', 1200);})">
-     ID 복사
-   </button>
- </div>
+  <button class="pill" type="button"
+    onclick="alert('WeChat ID: jue3445\n微信号：jue3445\n可直接搜索添加');">
+    ID 보기
+  </button>
+</div>
 
           <!-- LINE -->
         <div class="app" style="cursor: default;">
