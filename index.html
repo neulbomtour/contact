@@ -1,210 +1,224 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Claire</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claire · Contact</title>
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:rgba(255,255,255,.08);
-      --border:rgba(255,255,255,.16);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --radius:18px;
-      --shadow:0 12px 40px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      padding:24px;
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR";
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(99,102,241,.30), transparent 60%),
-        radial-gradient(900px 500px at 20% 0%, rgba(34,197,94,.22), transparent 55%),
-        var(--bg);
-    }
-    .wrap{
-      width:100%;
-      max-width:520px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
-    h1{
-      font-size:20px;
-      margin:0 0 6px;
-    }
-    .desc{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:16px;
-    }
+<style>
+:root{
+  --bg:#0b1220;
+  --card:rgba(255,255,255,.08);
+  --card2:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.68);
+  --border:rgba(255,255,255,.16);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo",Arial;
+  background:
+    radial-gradient(900px 500px at 20% 0%,rgba(34,197,94,.22),transparent 55%),
+    radial-gradient(900px 500px at 80% 10%,rgba(59,130,246,.22),transparent 55%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:22px 14px 40px;
+}
+.wrap{width:100%;max-width:520px}
+.top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:14px;
+}
+.avatar{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--card2);
+  font-weight:700;
+}
+h1{font-size:18px;margin:0}
+.desc{font-size:13px;color:var(--muted)}
 
-    .app{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px;
-      border-radius:14px;
-      background:rgba(255,255,255,.04);
-      margin-bottom:10px;
-    }
-    .left{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
-    .icon{
-      width:36px;
-      height:36px;
-      border-radius:10px;
-      background:rgba(255,255,255,.12);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-    }
-    .meta{
-      min-width:0;
-    }
-    .name{
-      font-weight:600;
-      margin:0;
-    }
-    .sub{
-      font-size:13px;
-      color:var(--muted);
-      margin:2px 0 0;
-    }
-    .right{
-      display:flex;
-      gap:8px;
-    }
-    .pill{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-  </style>
+.list{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.app{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  border-top:1px solid var(--border);
+}
+.app:first-child{border-top:none}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.icon{
+  width:36px;height:36px;border-radius:10px;
+  display:grid;place-items:center;
+  background:var(--card2);
+  font-weight:700;
+}
+.meta{min-width:0}
+.name{margin:0;font-weight:600}
+.sub{margin:0;font-size:12px;color:var(--muted)}
+
+.right{
+  display:flex;
+  gap:10px;
+}
+.pill{
+  border:1px solid var(--border);
+  background:var(--card2);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  cursor:pointer;
+}
+.pill:hover{background:rgba(255,255,255,.18)}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:14px;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
+<div class="wrap">
+
+  <div class="top">
+    <div class="avatar">C</div>
+    <div>
       <h1>Claire · Contact</h1>
-      <div class="desc">원하는 앱을 선택해서 바로 연락하거나 QR로 추가하세요.</div>
-
-      <!-- WhatsApp -->
-      <div class="app">
-        <div class="left">
-          <div class="icon">WA</div>
-          <div class="meta">
-            <p class="name">WhatsApp</p>
-            <p class="sub">+82-10-3831-6689</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill" onclick="openQR('whatsapp.jpg','WhatsApp QR')">QR 보기</button>
-        </div>
-      </div>
-
-      <!-- Kakao -->
-      <div class="app">
-        <div class="left">
-          <div class="icon">KT</div>
-          <div class="meta">
-            <p class="name">KakaoTalk OpenChat</p>
-            <p class="sub">링크 또는 QR로 입장</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill" onclick="openQR('kakaotalk.jpg','KakaoTalk QR')">QR 보기</button>
-        </div>
-      </div>
-
-      <!-- WeChat -->
-<div class="app">
-  <div class="left">
-    <div class="icon">WC</div>
-    <div class="meta">
-      <p class="name">WeChat</p>
-      <p class="sub">ID 또는 QR로 친구 추가</p>
+      <p class="desc">원하는 앱을 선택해 바로 연락하거나 QR로 추가하세요.</p>
     </div>
   </div>
 
-  <div class="right">
-    <!-- 아이디 추가 (앞 버튼) -->
-    <button class="pill"
-      onclick="navigator.clipboard.writeText('jue3445')
-        .then(()=>alert('WeChat ID 已复制：jue3445'))">
-      ID 추가
-    </button>
+  <div class="list">
 
-    <!-- QR 보기 (뒤 버튼) -->
-    <button class="pill"
-      onclick="openQR('wechat.jpg','WeChat QR')">
-      QR 보기
-    </button>
+    <!-- WhatsApp -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">WA</div>
+        <div class="meta">
+          <p class="name">WhatsApp</p>
+          <p class="sub">+82-10-3831-6689</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-link="https://wa.me/821038316689">열기</button>
+        <button class="pill" onclick="openQR('whatsapp.jpg','WhatsApp QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- Kakao -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">KT</div>
+        <div class="meta">
+          <p class="name">KakaoTalk OpenChat</p>
+          <p class="sub">링크 또는 QR 참여</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-link="https://open.kakao.com/o/sRzCObVh">열기</button>
+        <button class="pill" onclick="openQR('kakaotalk.jpg','Kakao QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- LINE -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">LN</div>
+        <div class="meta">
+          <p class="name">LINE</p>
+          <p class="sub">링크 또는 QR 추가</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-link="https://line.me/ti/p/q4XXxGbGMi">열기</button>
+        <button class="pill" onclick="openQR('line.jpg','LINE QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- Instagram -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">IG</div>
+        <div class="meta">
+          <p class="name">Instagram</p>
+          <p class="sub">@jjj.u_eun</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-link="https://www.instagram.com/jjj.u_eun">열기</button>
+        <button class="pill" onclick="openQR('instagram.jpg','Instagram QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- WeChat -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">WC</div>
+        <div class="meta">
+          <p class="name">WeChat</p>
+          <p class="sub">ID 또는 QR 친구추가</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill"
+          onclick="navigator.clipboard.writeText('jue3445')
+            .then(()=>alert('WeChat ID 已复制：jue3445'))">
+          아이디 추가
+        </button>
+        <button class="pill" onclick="openQR('wechat.jpg','WeChat QR')">QR 보기</button>
+      </div>
+    </div>
+
   </div>
+
+  <div class="footer">
+    © Contact Hub · 아이콘/순서/링크 언제든 수정 가능
+  </div>
+
 </div>
 
-      <!-- LINE -->
-      <div class="app">
-        <div class="left">
-          <div class="icon">LN</div>
-          <div class="meta">
-            <p class="name">LINE</p>
-            <p class="sub">링크 또는 QR로 추가</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill" onclick="openQR('line.jpg','LINE QR')">QR 보기</button>
-        </div>
-      </div>
+<!-- JS -->
+<script>
+function openQR(img,title){
+  const w=window.open("","_blank","width=360,height=420");
+  w.document.write(
+    "<title>"+title+"</title>"+
+    "<img src='"+img+"' style='width:100%'>"
+  );
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-link]");
+  if(b) window.open(b.dataset.link,"_blank");
+});
+</script>
 
-      <!-- Instagram -->
-      <div class="app">
-        <div class="left">
-          <div class="icon">IG</div>
-          <div class="meta">
-            <p class="name">Instagram</p>
-            <p class="sub">@jjj_u_eun</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill" onclick="openQR('instagram.jpg','Instagram QR')">QR 보기</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    function openQR(img,title){
-      const w = window.open("","_blank","width=420,height=480");
-      w.document.write(`
-        <title>${title}</title>
-        <body style="margin:0;display:flex;align-items:center;justify-content:center;background:#111;">
-          <img src="${img}" style="max-width:90%;border-radius:12px;">
-        </body>
-      `);
-    }
-  </script>
 </body>
 </html>
