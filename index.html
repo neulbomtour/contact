@@ -139,18 +139,30 @@
       </div>
 
       <!-- WeChat -->
-      <div class="app">
-        <div class="left">
-          <div class="icon">WC</div>
-          <div class="meta">
-            <p class="name">WeChat</p>
-            <p class="sub">QR로 친구 추가</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill" onclick="openQR('wechat.jpg','WeChat QR')">QR 보기</button>
-        </div>
-      </div>
+<div class="app">
+  <div class="left">
+    <div class="icon">WC</div>
+    <div class="meta">
+      <p class="name">WeChat</p>
+      <p class="sub">ID 또는 QR로 친구 추가</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <!-- 아이디 추가 (앞 버튼) -->
+    <button class="pill"
+      onclick="navigator.clipboard.writeText('jue3445')
+        .then(()=>alert('WeChat ID 已复制：jue3445'))">
+      ID 추가
+    </button>
+
+    <!-- QR 보기 (뒤 버튼) -->
+    <button class="pill"
+      onclick="openQR('wechat.jpg','WeChat QR')">
+      QR 보기
+    </button>
+  </div>
+</div>
 
       <!-- LINE -->
       <div class="app">
