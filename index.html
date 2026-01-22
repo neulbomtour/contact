@@ -283,6 +283,20 @@
           </div>
           <div class="right">
             <button class="pill" data-qr="wechat.jpg" data-title="WeChat QR" data-link="" data-i18n="showqr">QR 보기</button>
+          <div style="margin-top:10px; text-align:center;">
+  <div style="font-size:14px; color:#444; line-height:1.5;">
+    WeChat ID: <strong id="wechatIdText">jue3445</strong><br/>
+    微信号：<strong>jue3445</strong>（可直接搜索添加）
+  </div>
+
+  <button
+    type="button"
+    onclick="navigator.clipboard.writeText('jue3445').then(()=>{this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy WeChat ID', 1200);})"
+    style="margin-top:8px; padding:8px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.2); background:#2A2F3A; color:#fff; cursor:pointer; font-size:13px;"
+  >
+    Copy WeChat ID
+  </button>
+</div>
           </div>
         </div>
 
