@@ -1,658 +1,274 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NeulbomTour · Contact</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claire · Contact</title>
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:rgba(255,255,255,.08);
-      --card2:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --border:rgba(255,255,255,.16);
-      --shadow:0 12px 40px rgba(0,0,0,.35);
-      --radius:18px;
+<style>
+:root{
+  --bg:#0b1220;
+  --card:rgba(255,255,255,.08);
+  --card2:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.68);
+  --border:rgba(255,255,255,.16);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo",Arial;
+  background:
+    radial-gradient(900px 500px at 20% 0%,rgba(34,197,94,.22),transparent 55%),
+    radial-gradient(900px 500px at 80% 10%,rgba(59,130,246,.22),transparent 55%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:22px 14px 40px;
+}
+.wrap{width:100%;max-width:520px}
 
-      --accent: rgba(99,102,241,.22);
-      --accent2: rgba(34,197,94,.18);
-      --wechatGlow: rgba(59,130,246,.20);
-      --wechatBorder: rgba(59,130,246,.40);
-    }
+.top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:14px;
+}
+.avatar{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--card2);
+  font-weight:700;
+}
+.title{min-width:0}
+h1{font-size:18px;margin:0}
+.desc{font-size:13px;color:var(--muted);margin:2px 0 0}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-        "Noto Sans KR", "Apple SD Gothic Neo", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(99,102,241,0.30), transparent 60%),
-        radial-gradient(900px 500px at 20% 0%, rgba(34,197,94,0.22), transparent 55%),
-        radial-gradient(900px 500px at 80% 10%, rgba(59,130,246,0.22), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      padding:22px 14px 40px;
-    }
+.lang{
+  margin-left:auto;
+  display:flex;
+  gap:6px;
+}
+.lang-btn{
+  border:1px solid var(--border);
+  background:var(--card2);
+  color:var(--text);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  cursor:pointer;
+  opacity:.6;
+}
+.lang-btn.active{
+  opacity:1;
+  background:rgba(255,255,255,.22);
+}
 
-    .wrap{width:100%; max-width:520px;}
-    .top{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:18px 18px;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      border-radius:22px;
-      box-shadow: var(--shadow);
-    }
+.list{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
 
-    /* --- Brand mark (logo symbol only) --- */
-    .brand{
-      width:48px; height:48px;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      flex:0 0 auto;
-    }
-    /* Crop left side so text area is mostly hidden */
-    .brand img{
-      width:140px; height:48px;
-      object-fit:cover;
-      object-position:left center;
-      display:block;
-      transform: translateX(-6px);
-    }
+.app{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  border-top:1px solid var(--border);
+}
+.app:first-child{border-top:none}
 
-    .title{min-width:0; flex:1;}
-    h1{
-      margin:0;
-      font-size:20px;
-      letter-spacing:.2px;
-      line-height:1.1;
-    }
-    .desc{
-      margin:6px 0 0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-    }
+.left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.icon{
+  width:36px;height:36px;border-radius:10px;
+  display:grid;place-items:center;
+  background:var(--card2);
+  font-weight:700;
+}
+.meta{min-width:0}
+.name{margin:0;font-weight:600}
+.sub{margin:0;font-size:12px;color:var(--muted)}
 
-    .lang{
-      display:flex;
-      gap:8px;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      padding:6px;
-      border-radius:999px;
-      flex:0 0 auto;
-    }
-    .lang-btn{
-      border:0;
-      cursor:pointer;
-      color:var(--muted);
-      background:transparent;
-      padding:8px 10px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:12px;
-      letter-spacing:.2px;
-    }
-    .lang-btn.active{
-      color:var(--text);
-      background:rgba(255,255,255,.12);
-    }
+.right{
+  display:flex;
+  gap:10px;
+}
+.pill{
+  border:1px solid var(--border);
+  background:var(--card2);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  cursor:pointer;
+}
+.pill:hover{background:rgba(255,255,255,.18)}
 
-    .hint{
-      margin:14px 2px 12px;
-      color:rgba(255,255,255,.72);
-      font-size:13px;
-      line-height:1.45;
-    }
-
-    .list{
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .app{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      padding:16px 16px;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .app:first-child{border-top:0}
-
-    .left{
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-      min-width:0;
-      flex:1;
-    }
-
-    /* No more WA/KT icons */
-    .meta{min-width:0}
-    .name{
-      margin:0;
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .sub{
-      margin:4px 0 0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-    }
-
-    .tag{
-      display:inline-block;
-      margin-left:8px;
-      padding:2px 8px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      font-size:11px;
-      color:var(--muted);
-      background:rgba(255,255,255,.06);
-      font-weight:700;
-      transform: translateY(-1px);
-    }
-
-    .right{
-      display:flex;
-      gap:10px;
-      flex:0 0 auto;
-      align-items:center;
-    }
-
-    .pill{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.08);
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:13px;
-      cursor:pointer;
-      white-space:nowrap;
-      transition:.15s ease;
-    }
-    .pill:hover{background:rgba(255,255,255,.12)}
-    .pill:active{transform:translateY(1px)}
-
-    .pill.primary{
-      border-color: rgba(255,255,255,.18);
-      background: rgba(255,255,255,.12);
-    }
-
-    /* --- WeChat highlight --- */
-    .app.wechat{
-      position:relative;
-      background:
-        radial-gradient(700px 120px at 80% 50%, var(--wechatGlow), transparent 60%),
-        rgba(255,255,255,.06);
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .app.wechat::before{
-      content:"";
-      position:absolute;
-      inset:8px;
-      border-radius:18px;
-      border:1px solid var(--wechatBorder);
-      pointer-events:none;
-      opacity:.55;
-    }
-    .wechat .name .tag{
-      border-color: rgba(59,130,246,.35);
-      background: rgba(59,130,246,.12);
-      color: rgba(255,255,255,.80);
-    }
-
-    .wechat-id{
-      margin-top:6px;
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      font-size:12px;
-      color:rgba(255,255,255,.70);
-    }
-    .wechat-id b{color:rgba(255,255,255,.92)}
-    .wechat-id .line{
-      display:flex;
-      gap:6px;
-      flex-wrap:wrap;
-    }
-    .wechat-id .label{
-      color:rgba(255,255,255,.55);
-      font-weight:700;
-    }
-
-    .footer{
-      margin:12px 4px 0;
-      color:rgba(255,255,255,.55);
-      font-size:12px;
-      line-height:1.5;
-      padding:10px 2px;
-    }
-    .footer small{display:block; margin-top:6px; opacity:.9}
-
-    /* --- Modal --- */
-    .backdrop{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.55);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:999;
-    }
-    .backdrop.show{display:flex}
-    .modal{
-      width:min(520px, 100%);
-      background:rgba(15,23,42,.92);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:22px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      overflow:hidden;
-    }
-    .modal-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 14px 12px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .modal-title{
-      font-weight:900;
-      font-size:14px;
-      letter-spacing:.2px;
-      margin:0;
-    }
-    .x{
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      width:34px; height:34px;
-      border-radius:10px;
-      cursor:pointer;
-      font-weight:900;
-    }
-    .modal-body{
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .qrbox{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .qrbox img{
-      width:min(360px, 100%);
-      height:auto;
-      border-radius:12px;
-      background:white;
-    }
-    .modal-actions{
-      display:flex;
-      gap:10px;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:24px;
-      transform:translateX(-50%);
-      background:rgba(0,0,0,.65);
-      border:1px solid rgba(255,255,255,.16);
-      color:rgba(255,255,255,.92);
-      padding:10px 12px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:13px;
-      display:none;
-      z-index:1000;
-      backdrop-filter: blur(8px);
-    }
-    .toast.show{display:block}
-
-    @media (max-width:380px){
-      .pill{padding:9px 10px; font-size:12px}
-      .name{font-size:15px}
-    }
-  </style>
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:14px;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <!-- TOP -->
-    <div class="top">
-      <div class="brand" title="NeulbomTours">
-        <!-- Put neulbom_logo.png in same folder (contact/) -->
-        <img src="neulbom_logo.png" alt="NeulbomTours" />
-      </div>
+<div class="wrap">
 
-      <div class="title">
-        <h1 data-i18n="title">NeulbomTour · Contact</h1>
-        <p class="desc" data-i18n="subtitle">Choose an app to contact us, or add via QR.</p>
-      </div>
-
-      <div class="lang" aria-label="Language">
-        <button class="lang-btn" data-lang="kr">KR</button>
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="zh">中文</button>
-      </div>
+  <!-- TOP -->
+  <div class="top">
+    <div class="avatar">C</div>
+    <div class="title">
+      <h1 data-i18n="title">Claire · Contact</h1>
+      <p class="desc" data-i18n="subtitle">
+        원하는 앱을 선택해 바로 연락하거나 QR로 추가하세요.
+      </p>
     </div>
-
-    <div class="hint" data-i18n="hint">
-      Select your preferred messenger. For some apps (e.g., Kakao/WeChat), “Show QR” is the most reliable.
-    </div>
-
-    <!-- LIST -->
-    <div class="list">
-
-      <!-- WhatsApp -->
-      <div class="app">
-        <div class="left">
-          <div class="meta">
-            <p class="name">WhatsApp <span class="tag">Messenger</span></p>
-            <p class="sub">+82-10-3831-6689</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill primary" data-link="https://wa.me/821038316689" data-i18n="open">Open</button>
-          <button class="pill" data-qr="whatsapp.jpg" data-title="WhatsApp QR" data-i18n="showqr">Show QR</button>
-        </div>
-      </div>
-
-      <!-- KakaoTalk -->
-      <div class="app">
-        <div class="left">
-          <div class="meta">
-            <p class="name">KakaoTalk <span class="tag">OpenChat</span></p>
-            <p class="sub" data-i18n="kakao_sub">Join via link or QR</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill primary" data-link="https://open.kakao.com/o/sRzCObVh" data-i18n="open">Open</button>
-          <button class="pill" data-qr="kakaotalk.jpg" data-title="KakaoTalk QR" data-i18n="showqr">Show QR</button>
-        </div>
-      </div>
-
-      <!-- LINE -->
-      <div class="app">
-        <div class="left">
-          <div class="meta">
-            <p class="name">LINE <span class="tag">Link / QR</span></p>
-            <p class="sub" data-i18n="line_sub">Add via link or QR</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill primary" data-link="https://line.me/ti/p/q4XXxGbGMi" data-i18n="open">Open</button>
-          <button class="pill" data-qr="line.jpg" data-title="LINE QR" data-i18n="showqr">Show QR</button>
-        </div>
-      </div>
-
-      <!-- Instagram -->
-      <div class="app">
-        <div class="left">
-          <div class="meta">
-            <p class="name">Instagram <span class="tag">DM</span></p>
-            <p class="sub">@jjj.u_eun</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="pill primary" data-link="https://www.instagram.com/jjj.u_eun" data-i18n="open">Open</button>
-          <button class="pill" data-qr="instagram.jpg" data-title="Instagram QR" data-i18n="showqr">Show QR</button>
-        </div>
-      </div>
-
-      <!-- WeChat (highlight) -->
-      <div class="app wechat">
-        <div class="left">
-          <div class="meta">
-            <p class="name">WeChat <span class="tag">Recommended</span></p>
-            <p class="sub" data-i18n="wechat_sub">Add by ID or QR</p>
-
-            <!-- 3-language ID lines shown together -->
-            <div class="wechat-id">
-              <div class="line">
-                <span class="label">EN:</span> <span>WeChat ID:</span> <b>jue3445</b>
-              </div>
-              <div class="line">
-                <span class="label">KR:</span> <span>WeChat ID:</span> <b>jue3445</b>
-              </div>
-              <div class="line">
-                <span class="label">中文:</span> <span>微信号:</span> <b>jue3445</b> <span style="opacity:.8;">（可直接搜索添加）</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="right">
-          <button class="pill primary" id="wechatCopyBtn" data-i18n="addid">Add ID</button>
-          <button class="pill" data-qr="wechat.jpg" data-title="WeChat QR" data-i18n="showqr">Show QR</button>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer">
-      <span data-i18n="footnote">
-        Tip: You can zoom or save the QR image. (Depending on the phone, “Open link” may be faster.)
-      </span>
-      <small>© Contact Hub · <span data-i18n="editable">You can update icons/order/links anytime.</span></small>
+    <div class="lang">
+      <button class="lang-btn active" data-lang="kr">KR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
     </div>
   </div>
 
-  <!-- MODAL -->
-  <div class="backdrop" id="backdrop" role="dialog" aria-modal="true">
-    <div class="modal">
-      <div class="modal-top">
-        <p class="modal-title" id="modalTitle">QR</p>
-        <button class="x" id="closeBtn" aria-label="Close">✕</button>
+  <div class="list">
+
+    <!-- WhatsApp -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">WA</div>
+        <div class="meta">
+          <p class="name">WhatsApp</p>
+          <p class="sub">+82-10-3831-6689</p>
+        </div>
       </div>
-      <div class="modal-body">
-        <div class="qrbox">
-          <img id="qrImg" alt="QR Code" />
-        </div>
-        <div class="modal-actions">
-          <button class="pill" id="downloadBtn" data-i18n="download">Download</button>
-          <button class="pill primary" id="openLinkBtn" data-i18n="open_link">Open link</button>
-        </div>
+      <div class="right">
+        <button class="pill" data-role="open" data-link="https://wa.me/821038316689">열기</button>
+        <button class="pill" data-role="qr" onclick="openQR('whatsapp.jpg','WhatsApp QR')">QR 보기</button>
       </div>
     </div>
+
+    <!-- Kakao -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">KT</div>
+        <div class="meta">
+          <p class="name">KakaoTalk</p>
+          <p class="sub">링크 또는 QR 참여</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-role="open" data-link="https://open.kakao.com/o/sRzCObVh">열기</button>
+        <button class="pill" data-role="qr" onclick="openQR('kakaotalk.jpg','Kakao QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- LINE -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">LN</div>
+        <div class="meta">
+          <p class="name">LINE</p>
+          <p class="sub">링크 또는 QR 추가</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-role="open" data-link="https://line.me/ti/p/q4XXxGbGMi">열기</button>
+        <button class="pill" data-role="qr" onclick="openQR('line.jpg','LINE QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- Instagram -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">IG</div>
+        <div class="meta">
+          <p class="name">Instagram</p>
+          <p class="sub">@jjj.u_eun</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-role="open" data-link="https://www.instagram.com/jjj.u_eun">열기</button>
+        <button class="pill" data-role="qr" onclick="openQR('instagram.jpg','Instagram QR')">QR 보기</button>
+      </div>
+    </div>
+
+    <!-- WeChat -->
+    <div class="app">
+      <div class="left">
+        <div class="icon">WC</div>
+        <div class="meta">
+          <p class="name">WeChat</p>
+          <p class="sub">ID 或二维码添加好友</p>
+        </div>
+      </div>
+      <div class="right">
+        <button class="pill" data-role="addid"
+          onclick="navigator.clipboard.writeText('jue3445')
+            .then(()=>alert('WeChat ID 已复制：jue3445'))">
+          아이디 추가
+        </button>
+        <button class="pill" data-role="qr" onclick="openQR('wechat.jpg','WeChat QR')">QR 보기</button>
+      </div>
+    </div>
+
   </div>
 
-  <div class="toast" id="toast">Copied</div>
+  <div class="footer">
+    © Contact Hub · 언제든 수정 가능
+  </div>
 
-  <script>
-    const i18n = {
-      en: {
-        title: "NeulbomTour · Contact",
-        subtitle: "Choose an app to contact us, or add via QR.",
-        hint: "Select your preferred messenger. For some apps (e.g., Kakao/WeChat), “Show QR” is the most reliable.",
-        open: "Open",
-        showqr: "Show QR",
-        download: "Download",
-        open_link: "Open link",
-        addid: "Add ID",
-        copied: "Copied!",
-        kakao_sub: "Join via link or QR",
-        line_sub: "Add via link or QR",
-        wechat_sub: "Add by ID or QR",
-        footnote: "Tip: You can zoom or save the QR image. (Depending on the phone, “Open link” may be faster.)",
-        editable: "You can update icons/order/links anytime."
-      },
-      kr: {
-        title: "늘봄투어 · 연락하기",
-        subtitle: "원하는 앱을 선택해 바로 연락하거나, QR로 추가하세요.",
-        hint: "아래에서 자주 쓰는 메신저를 선택하세요. 일부 앱(카톡/위챗 등)은 “QR 보기”가 가장 안정적이에요.",
-        open: "열기",
-        showqr: "QR 보기",
-        download: "저장",
-        open_link: "링크 열기",
-        addid: "아이디 추가",
-        copied: "복사됨!",
-        kakao_sub: "링크 또는 QR 참여",
-        line_sub: "링크 또는 QR 친구추가",
-        wechat_sub: "ID 또는 QR로 친구추가",
-        footnote: "안내: QR은 확대하거나 저장해서 사용할 수 있어요. (폰에 따라 ‘링크 열기’가 더 빠를 수도 있어요.)",
-        editable: "언제든지(아이콘/순서/링크) 수정할 수 있어요."
-      },
-      zh: {
-        title: "NeulbomTour · 联系方式",
-        subtitle: "请选择应用直接联系，或通过二维码添加。",
-        hint: "请选择常用的通讯软件。部分应用（如 Kakao/微信）使用“查看二维码”更稳定。",
-        open: "打开",
-        showqr: "查看二维码",
-        download: "保存",
-        open_link: "打开链接",
-        addid: "添加ID",
-        copied: "已复制！",
-        kakao_sub: "通过链接或二维码加入",
-        line_sub: "通过链接或二维码添加",
-        wechat_sub: "通过ID或二维码添加",
-        footnote: "提示：二维码可放大或保存使用。（不同手机上“打开链接”可能更快。）",
-        editable: "可随时修改（图标/顺序/链接）。"
-      }
-    };
+</div>
 
-    const langButtons = document.querySelectorAll(".lang-btn");
-    const backdrop = document.getElementById("backdrop");
-    const closeBtn = document.getElementById("closeBtn");
-    const qrImg = document.getElementById("qrImg");
-    const modalTitle = document.getElementById("modalTitle");
-    const downloadBtn = document.getElementById("downloadBtn");
-    const openLinkBtn = document.getElementById("openLinkBtn");
-    const toast = document.getElementById("toast");
-    const wechatCopyBtn = document.getElementById("wechatCopyBtn");
+<script>
+function openQR(img,title){
+  const w=window.open("","_blank","width=360,height=420");
+  w.document.write("<title>"+title+"</title><img src='"+img+"' style='width:100%'>");
+}
 
-    let currentOpenLink = "";
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-link]");
+  if(b) window.open(b.dataset.link,"_blank");
+});
 
-    function setLang(lang){
-      const dict = i18n[lang] || i18n.en;
+const i18n={
+  kr:{title:"Claire · Contact",subtitle:"원하는 앱을 선택해 바로 연락하거나 QR로 추가하세요.",open:"열기",qr:"QR 보기",addId:"아이디 추가"},
+  en:{title:"Claire · Contact",subtitle:"Choose an app to contact directly or add via QR.",open:"Open",qr:"View QR",addId:"Add ID"},
+  zh:{title:"Claire · 联系方式",subtitle:"请选择应用直接联系，或通过二维码添加。",open:"打开",qr:"查看二维码",addId:"添加ID"}
+};
 
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if(dict[key]) el.textContent = dict[key];
-      });
+function setLang(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    el.innerText=i18n[lang][el.dataset.i18n];
+  });
+  document.querySelectorAll(".lang-btn").forEach(b=>{
+    b.classList.toggle("active",b.dataset.lang===lang);
+  });
+  document.querySelectorAll("[data-role='open']").forEach(b=>b.innerText=i18n[lang].open);
+  document.querySelectorAll("[data-role='qr']").forEach(b=>b.innerText=i18n[lang].qr);
+  document.querySelectorAll("[data-role='addid']").forEach(b=>b.innerText=i18n[lang].addId);
+}
 
-      // Update active state
-      langButtons.forEach(b=>{
-        b.classList.toggle("active", b.dataset.lang === lang);
-      });
+document.querySelectorAll(".lang-btn").forEach(b=>{
+  b.onclick=()=>setLang(b.dataset.lang);
+});
+</script>
 
-      // Save choice
-      localStorage.setItem("lang", lang);
-
-      // Update toast text for language
-      toast.textContent = dict.copied || "Copied!";
-    }
-
-    // Default language: EN (first visit), otherwise saved
-    const savedLang = localStorage.getItem("lang");
-    setLang(savedLang || "en");
-
-    langButtons.forEach(btn=>{
-      btn.addEventListener("click", ()=> setLang(btn.dataset.lang));
-    });
-
-    function showToast(){
-      toast.classList.add("show");
-      clearTimeout(showToast._t);
-      showToast._t = setTimeout(()=> toast.classList.remove("show"), 1200);
-    }
-
-    // Open link buttons
-    document.querySelectorAll("[data-link]").forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        const url = btn.getAttribute("data-link");
-        if(!url) return;
-        window.open(url, "_blank");
-      });
-    });
-
-    // Show QR buttons
-    document.querySelectorAll("[data-qr]").forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        const file = btn.getAttribute("data-qr");
-        const title = btn.getAttribute("data-title") || "QR";
-        currentOpenLink = btn.getAttribute("data-link") || "";
-
-        modalTitle.textContent = title;
-        qrImg.src = file;
-
-        // Download uses same image file
-        downloadBtn.onclick = ()=>{
-          const a = document.createElement("a");
-          a.href = file;
-          a.download = file;
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-        };
-
-        // Open link: if not set, try to infer from app row "Open" button nearby
-        openLinkBtn.onclick = ()=>{
-          // Try to find sibling open button url
-          const row = btn.closest(".app");
-          const openBtn = row ? row.querySelector("[data-link]") : null;
-          const url = currentOpenLink || (openBtn ? openBtn.getAttribute("data-link") : "");
-          if(url) window.open(url, "_blank");
-        };
-
-        backdrop.classList.add("show");
-      });
-    });
-
-    function closeModal(){
-      backdrop.classList.remove("show");
-      qrImg.src = "";
-    }
-    closeBtn.addEventListener("click", closeModal);
-    backdrop.addEventListener("click", (e)=>{
-      if(e.target === backdrop) closeModal();
-    });
-    document.addEventListener("keydown", (e)=>{
-      if(e.key === "Escape") closeModal();
-    });
-
-    // WeChat "Add ID" copy
-    wechatCopyBtn.addEventListener("click", async ()=>{
-      try{
-        await navigator.clipboard.writeText("jue3445");
-        showToast();
-      }catch(err){
-        // Fallback
-        const ta = document.createElement("textarea");
-        ta.value = "jue3445";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        ta.remove();
-        showToast();
-      }
-    });
-  </script>
 </body>
 </html>
